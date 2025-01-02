@@ -19,6 +19,11 @@ void setup() {
 }
 
 void displayGPSInfo() {
+  M5.Lcd.fillScreen(BLACK);
+  M5.Lcd.setCursor(0, 0);
+  M5.Lcd.setTextSize(2);
+  M5.Lcd.println("GPS Example");
+  M5.Lcd.setTextSize(1);
   M5.Lcd.setCursor(0, 26);
   // 显示位置信息
   if (gps.location.isValid()) {
@@ -70,6 +75,7 @@ void displayGPSInfo() {
   } else {
     M5.Lcd.println("Invalid");
   }
+  delay(500);
 }
 
 void loop() {
